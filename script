@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+"exec" "plk" "-K" "$0" "$@"
+
+(ns script.main
+  (:require [library]))
+
+(defn -main
+  [& args]
+  (println "Test print in main")
+  (library/test-print))
+
+(set! *main-cli-fn* -main)
